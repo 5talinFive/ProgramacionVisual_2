@@ -8,7 +8,8 @@ namespace Modelo.Entidades
     {
         //Propiedades 
         public int ConfiguracionId { get; set; }
-        public string NombreEmpresa { get; set; }
+        public string NombreBodega { get; set; }
+        public int valorminimo { get; set; }
 
         //Stock minimo 
         public float PesoCantidad { get; set; }
