@@ -23,6 +23,28 @@ namespace ModeloDB
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlServer("Server=MIPCC\\STALINSQL; Initial Catalog=Bodega; trusted_connecion=true;");
+
+        }
+
+        //Configurar el modelo de Objetos
+        protected override void OnModelCreating(ModelBuilder model)
+        {
+            //Configuracion de Producto
+            model.Entity<Producto>().HasOne(prod => prod.Proveedores);
+            model.Entity<Producto>().HasOne(prod => prod.Tipo);
+            model.Entity<Producto>()
+                .HasOne(prod => prod.Tipo)
+                .WithMany(almacen => almacen.Productos)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasForeignKey(prod => prod.Movimiento);
+
+            //Configuracion de Pedido
+            model.Entity<Pedido>().HasOne(pedido => pedido.Producto);
+            model.Entity<Pedido>()
+                 .HasOne(pedido => pedido.Producto)
+                 .WithMany(movimientos => movimientos.Pedido)
+                 .OnDelete(DeleteBehavior.Cascade)
+                 .HasForeignKey(pedido => pedido.PedidoId);
         }
 
     }

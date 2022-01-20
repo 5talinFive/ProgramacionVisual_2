@@ -5806,6 +5806,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Microsoft.EntityFrameworkCore >= 5.0.11",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.11",
       "Modelo >= 1.0.0"
@@ -5854,6 +5855,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[5.0.11, )"
+          },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[5.0.11, )"

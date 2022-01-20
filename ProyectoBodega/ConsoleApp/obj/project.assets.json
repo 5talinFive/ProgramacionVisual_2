@@ -1496,6 +1496,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.11",
           "Modelo": "1.0.0"
         },
