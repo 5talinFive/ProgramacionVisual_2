@@ -37,9 +37,6 @@ namespace ConsoleApp
             {
                 NombreBodega = "Bodega San Cristobal",
                 valorminimo = 24,
-                PesoCantidad = 7.00f,
-                PesoStock = 0.35f,
-                Stockminimo = 0.35f
             };
             List<Configuracion> listaConfiguracion = new() { configuracion };
 
@@ -100,7 +97,7 @@ namespace ConsoleApp
             List<Proveedores> listaProvedores = new() { StalinSarango }
 
             Repositorio db = new Repositorio();
-            db.Producto.Add(listaTipo.Proveedores, listaProvedores);
+            db.Producto.Add(CamisaAdidas);
             db.SaveChanges();
         }
     }
