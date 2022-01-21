@@ -21,15 +21,15 @@ namespace ConsoleApp
 
             List<Producto> listaProductos = new() { CamisaAdidas, CamisaAdidas };
 
-            Pedido per2021_PAO2 = new()
+            Pedido per2021_P2 = new()
             {
 
                 FechaPedida = new DateTime(2020, 9, 1),
                 FechaFin = new DateTime(2021, 3, 1)
             };
-            Pedido per2021_PAO1 = new() { FechaPedida = new DateTime(2021, 4, 1), FechaFin = new DateTime(2021, 9, 1) };
-            Pedido per2022_PAO2 = new() { FechaPedida = new DateTime(2021, 9, 1), FechaFin = new DateTime(2022, 3, 1) };
-            List<Pedido> listaPedidos = new() { per2021_PAO2, per2021_PAO1, per2022_PAO2 };
+            Pedido per2021_P1 = new() { FechaPedida = new DateTime(2021, 4, 1), FechaFin = new DateTime(2021, 9, 1) };
+            Pedido per2022_P2 = new() { FechaPedida = new DateTime(2021, 9, 1), FechaFin = new DateTime(2022, 3, 1) };
+            List<Pedido> listaPedidos = new() { per2021_P2, per2021_P1, per2022_P2 };
 
 
             //Config datos de bodega
