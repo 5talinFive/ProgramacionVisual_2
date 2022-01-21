@@ -22,7 +22,7 @@ namespace ModeloDB
         //Configuracion de la conexion
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer("Server=MIPCC\\STALINSQL; Initial Catalog=Bodega; trusted_connecion=true;");
+            options.UseSqlServer("Server=MIPCC\\STALINSQL; Initial Catalog=Bodega; trusted_connection=true;");
 
         }
 
