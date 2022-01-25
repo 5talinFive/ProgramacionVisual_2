@@ -30,21 +30,21 @@ namespace ModeloDB
         protected override void OnModelCreating(ModelBuilder model)
         {
             //Configuracion de Producto
-            model.Entity<Producto>().HasOne(prod => prod.Proveedores);
-            model.Entity<Producto>().HasOne(prod => prod.Tipo);
+            model.Entity<Producto>().HasOne(Prod => Prod.Proveedores);
+            model.Entity<Producto>().HasOne(Prod => Prod.Tipo);
             model.Entity<Producto>()
-                .HasOne(prod => prod.Tipo)
-                .WithMany(almacen => almacen.Productos)
+                .HasOne(Prod => Prod.Tipo)
+                .WithMany(Bodega => Bodega.Productos)
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasForeignKey(prod => prod.Movimiento);
+                .HasForeignKey(Prod => Prod.Movimiento);
 
             //Configuracion de Pedido
-            model.Entity<Pedido>().HasOne(pedido => pedido.Producto);
+            model.Entity<Pedido>().HasOne(Pedido => Pedido.Producto);
             model.Entity<Pedido>()
-                 .HasOne(pedido => pedido.Producto)
-                 .WithMany(movimientos => movimientos.Pedido)
+                 .HasOne(Pedido => Pedido.Producto)
+                 .WithMany(Movimientos => Movimientos.Pedido)
                  .OnDelete(DeleteBehavior.Cascade)
-                 .HasForeignKey(pedido => pedido.PedidoId);
+                 .HasForeignKey(Pedido => Pedido.PedidoId);
         }
 
     }
